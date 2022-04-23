@@ -3,7 +3,7 @@ import logging
 from logging.config import dictConfig
 from log_config import log_config
 from pydantic import BaseModel
-from transformer import pipeline
+from transformers import pipeline
 
 class PredictionRequest(BaseModel):
   query_string: str
