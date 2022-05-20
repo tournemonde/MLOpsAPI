@@ -7,4 +7,10 @@ FastAPI deployment for the sentiment analysis based on HuggingFace Standard Pipe
 docker build -t sentiment-api .
 # run image
 docker run -dp 8000:8000 sentiment-api:latest
+
+gcloud auth login
+gcloud auth configure-docker
+gcloud config set project <project>
+gcloud builds submit --tag gcr.io/<project>/sentiment-api:latest
 ```
+# deploy to gcloud
